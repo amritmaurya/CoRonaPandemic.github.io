@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            background-color: #fff;
+            font-family: 'Source Sans Pro', sans-serif;
+            /* overflow: hidden !important; */
+            margin: 0px !important;
+            padding: 0px !important;
+        }
+
+        * {
+            text-decoration: none !important;
+        }
+
+        /* navigation */
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 0 25px 0 25px;
+            background-color: #fff;
+            box-shadow: 0 5px 40px rgb(153, 151, 151);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .links a {
+            margin-right: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .head {
+            color: #e0501b;
+        }
+
+        .nav h4 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 12px;
+        }
+
+        /* landing page
+         */
+        .landing {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden !important;
+            padding: 0 10vw 0 10vw;
+            height: 110vh;
+
+        }
+
+        .landingText h1 {
+            font-size: 4vw;
+            margin: 0 !important;
+        }
+
+        .landingText h3 {
+            margin: 6px !important;
+            font-size: 20px;
+            opacity: 0.3;
+            line-height: 30px;
+        }
+
+        .landingText .btn {
+            width: 120px;
+            margin-top: 30px;
+
+            padding: 14px 20px 14px 20px;
+            background-color: #2f8be0;
+
+            border-radius: 45px;
+            text-align: center;
+
+        }
+
+        .landingText .btn:hover {
+
+            background-color: #1e74c5;
+
+
+
+        }
+
+        .landingText .btn a {
+            color: #fff;
+            font-size: 1.2vw;
+            font-weight: bolder;
+
+        }
+
+        .landingimage img {
+            margin-top: 28px;
+            width: 39vw;
+            height: 45vw;
+        }
+
+        /* about section */
+        .about {
+            height: 600px;
+            padding: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .aboutText {
+            position: relative;
+            padding: 5 50px;
+            height: inherit;
+        }
+
+        .aboutText h1 {
+            position: relative;
+            left: -80px;
+        }
+
+        .aboutText img {
+            width: 40vw;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .aboutList {
+            width: 50%;
+        }
+
+        ol {
+            list-style: none;
+            color: #e0501b;
+
+        }
+
+        ol li {
+            font-size: 30px;
+            position: relative;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ebebeb;
+
+        }
+
+        li p {
+            font-size: 18px;
+            color: black;
+            padding-left: 60px;
+            line-height: 30px;
+            opacity: 0.8;
+        }
+
+        li span {
+            position: absolute;
+            line-height: 25px;
+            font-weight: 600;
+
+        }
+
+        /* info section */
+        .infoSection {
+            height: 600px;
+        }
+
+        .infoHeader {
+            text-align: center;
+            margin-bottom: 90px;
+        }
+
+        .infoCards {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding-left: 40px 0 40px 0;
+
+        }
+
+        .infoCards .card {
+            position: relative;
+            height: 360px;
+            width: 350px;
+            background: #fff;
+            box-shadow: 0 10px 22px rgb(158, 156, 156), 0 10px 18px rgb(158, 156, 156);
+        }
+
+        .infoCards .cardoneImg {
+            width: 180px;
+            position: absolute;
+            top: -50px;
+            right: -50px;
+        }
+
+        .infoCards .cardtwoImg {
+            width: 180px;
+            position: absolute;
+            top: -50px;
+            right: -50px;
+        }
+
+        .infoCards .cardthreeImg {
+            width: 180px;
+            position: absolute;
+            top: -50px;
+            right: -50px;
+        }
+
+        .cardgone {
+            height: 150px;
+            background-color: #e9b84d;
+        }
+
+        .cardgtwo {
+            height: 150px;
+            background-color: #e9b84d;
+        }
+
+        .cardgthree {
+            height: 150px;
+            background-color: #e9b84d;
+        }
+
+        .cardContent {
+            padding: 0 20px;
+        }
+
+        .caradContent h2 {
+            font-weight: 600;
+        }
+
+        .cardContent p {
+            line-height: 25px;
+            opacity: 0.6;
+
+        }
+
+        .cardContent .cardbtn {
+            position: absolute;
+            right: 20px;
+            padding: 10px;
+            background-color: #ededee;
+
+            width: 25px;
+            height: 20px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .acardContent .cardbtn .cardIcon {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 16px;
+        }
+
+        .cardbtn img {
+            transition: all 1s ease-in-out;
+            box-shadow: 0 0 10px rgb(161, 158, 158);
+            border-radius: 6px;
+            height: 26px;
+            width: 26px;
+        }
+
+        /* .cardbtn2 img{
+            transition: all 1s ease-in-out;
+            box-shadow: 0 0 10px rgb(161, 158, 158);
+            border-radius: 6px;
+            height: 26px;
+            width: 26px;
+            margin-left: 150px;
+        } */
+        .cardbtn img:hover {
+            background-color: #2f8be0;
+        }
+
+        .logo h2 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 3vw;
+
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+
+        .logo img {
+            position: relative;
+            left: 320px;
+            top: -76px;
+            width: 50vw;
+
+        }
+
+        /* footer */
+        .footer {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            height: 48px;
+            margin-top: 60px;
+
+        }
+
+        .footer p {
+
+            padding: 15px;
+        }
+
+        /* responsive */
+        @media only screen and (max-width: 360px) {
+
+            /* navigation */
+            .container {
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 10px;
+                height: auto;
+                overflow-y: hidden;
+            }
+
+            .nav h4 {
+                position: relative;
+                left: -20px;
+                font-size: 6vw;
+                margin-top: 10px;
+                margin-bottom: 14px;
+            }
+
+            .nav .links a {
+                position: relative;
+                left:0px;
+
+                font-size:1vw;
+                font-weight: 600;
+            }
+             .ok{
+                display: none;
+            }
+
+            /* landing page */
+            .landing {
+                flex-direction: column;
+                height: 750px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .landingText {
+                position: absolute;
+                top: 420px;
+                left: 80px;
+                font-size: 20vw;
+                margin: 0 !important;
+
+            }
+
+            .landingText h1 {
+                position: relative;
+                left: -50px;
+                font-size: 8vw;
+            }
+
+            .landingText h3 {
+                position: relative;
+                left: -50px;
+                font-size: 4vw;
+                opacity: 0.7;
+            }
+
+            .landingimage img {
+                position: absolute;
+                top: -300px;
+                left: -120px;
+                width: 75vw;
+                height: 95vw;
+            }
+
+            .landingText .btn {
+                position: relative;
+                left: -50px;
+                margin: 0 auto;
+                width: 50px;
+                height: 10px;
+            }
+
+            .landingText .btn a {
+                position: absolute;
+                ;
+                top: 8px;
+                left: 20px;
+                font-size: 3vw;
+                color: white;
+            }
+
+            .landingText .btn a :hover {
+                background-color: #1e74c5;
+            }
+
+            /* about */
+            .about {
+                overflow: hidden;
+                margin-top: -80px;
+                height: auto;
+                padding: 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .aboutText {
+                padding: 0 50px;
+                height: 100px;
+
+            }
+
+            .aboutText h1 {
+                left: 40px;
+                font-size: 6vw;
+            }
+
+            .aboutText img {
+                width: 56vw;
+                top: 10px;
+                left: -55px;
+            }
+
+            .aboutList {
+
+                margin-left: 10px;
+                width: 75%;
+                right: 0px;
+            }
+
+            ol li {
+                margin-top: 2px;
+                margin-bottom: 5px;
+                font-size: 20px;
+                line-height: 0px;
+            }
+
+            li p {
+                font-size: 15px;
+                line-height: 20px;
+            }
+
+            /* infosection */
+            .infoSection {
+                height: auto;
+                margin-left: -5px;
+            }
+            .infoHeader{
+                font-size: 3vw;
+                text-align: center;
+            }
+
+            .infoCards {
+                display: flex;
+                flex-direction: column;
+                padding: 50px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .infoCards .card {
+                margin-left: 20px;
+                
+                margin-bottom: 60px;
+            }
+
+            /* logo */
+            .logo h2 {
+                position: relative;
+                left: 0px;
+                font-size: 4vw;
+                margin-top: -20px;
+                margin-bottom: 50px;
+            }
+
+            .logo img {
+                position: relative;
+                left: 90px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- navigation -->
+
+
+    <div class="container">
+        <div class="nav">
+            <h4>HealthCare.</h4>
+        </div>
+        <div class="links">
+            <a href="#"><span class="head"> Corona Update</span></a>
+            <a href="#things">Things to Do</a>
+            <a href="#about1">About</a>
+            <a href="" class="ok">Contact</a>
+        </div>
+    </div>
+    <!-- landing page -->
+    <div class="landing">
+        <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
+            <h1>Stay In. <span style="color: #e0501b; font-size: 2.3vw;">Stay Safe.</span></h1>
+            <h3>Lets all work together to put an end to this pandemic. <br> Help stop the spread</h3>
+            <div class="btn">
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+        <div class="landingimage" data-aos="fade-down" data-aos-duration="1000">
+            <img src="23.png" alt="">
+        </div>
+    </div>
+    <!-- about section -->
+
+    <div class="about" id="about1">
+        <div class="aboutText">
+            <h1>Why is it Important That <br> <span style="color: #2f8be0; font-size: 3vw;"> &nbsp; &nbsp;You Stay
+                    Home</span></h1>
+            <img src="25.png" alt="">
+        </div>
+        <div class="aboutList" data-aos="fade-right" data-aos-duration="1000">
+            <ol>
+                <li><span>01</span>
+                    <p> Covid-19 is fast growing global pandemic.the number of corona confirmed cases worldwide has
+                        exceeded 50laksh due to rapid spreading of the virus.</p>
+                </li>
+                <li><span>02</span>
+                    <p>Covid-19 spread very easily than any other illness.</p>
+                </li>
+                <li><span>03</span>
+                    <p>Airborne transmission is different from droplet transmission as it refers to the presence of
+                        microbes within droplet nuclei, which are generally considered to be particles 5μm in diameter,
+                        can remain in the air for long periods of time and be transmitted to others over distances
+                        greater than 1 m.</p>
+                </li>
+                <li><span>04</span>
+                    <p>As of today their is no cure of this virus and no approved vaccine for covid-19.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- info section -->
+    <div class="infoSection" id="things">
+        <div class="infoHeader" data-aos="fade-up" data-aos-duration="1000">
+            <h1>Things You Could do During The <br><span style="color:#e0501b "> Coronavirus Qurantine.</span></h1>
+        </div>
+        <div class="infoCards" data-aos="fade-up" data-aos-duration="1000">
+            <div class="card one">
+                <img src="26.png" class="cardoneImg" alt="">
+                <div class="cardgone"></div>
+                <div class="cardContent">
+                    <h2 style="font-family: 'Montserrat', sans-serif;">Watching</h2>
+                    <p>Watching All Your Fvourite TV shows or Movies during this quarantine. &nbsp; <br>And Enjoy Your
+                        Day.</p>
+                    <div class="cardbtn">
+                        <img src="27.png" class="cardIcon" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="card two">
+                <img src="28.png" class="cardtwoImg" alt="">
+                <div class="cardgtwo"></div>
+                <div class="cardContent">
+                    <h2 style="font-family: 'Montserrat', sans-serif;">Learn More</h2>
+                    <p>
+                        At the time of the Quarantine you learned new things which will benefit you in the time ahead.
+                    </p>
+                    <div class="cardbtn">
+                        <img src="27.png" class="cardIcon" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="card three">
+                <img src="29.png" class="cardthreeImg" alt="">
+                <div class="cardgthree"></div>
+                <div class="cardContent">
+                    <h2 style="font-family: 'Montserrat', sans-serif;">Video Call</h2>
+                    <p>At the time of the Quarantine, you should talk to your friends and family on a video call.</p>
+                    <div class="cardbtn">
+                        <img src="27.png" class="cardIcon" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <h2 data-aos="fade-down" data-aos-duration="1000">We should Thanks <br> <span
+                style="color: #e0501b; font-size: 2vw;">Doctor and Nurse for their amazing work</span></h2>
+        <img src="30.png" alt="" data-aos="zoom-in" data-aos-duration="1000">
+    </div>
+
+
+
+    <div class="footer">
+        <p>
+            Copyright &copy; Amrit Raj Developer 2020
+        </p>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+</body>
+
+</html>
